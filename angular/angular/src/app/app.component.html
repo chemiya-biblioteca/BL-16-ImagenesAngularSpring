@@ -1,0 +1,20 @@
+<div class="col-6">
+<input type="file" multiple value="select" #selectFile
+(change)="onFileSelected($event)">
+</div>
+
+<button (click)="addProduct()">enviar</button>
+
+
+<div *ngFor="let p of products">
+  <h1>un producto</h1>
+  <h3>imagen principal</h3>
+<img [src]="p.productImages[0].url">
+<h3>nombre:{{p.productName}}</h3>
+<h2>todas las imagenes</h2>
+<div *ngFor="let fileHandler of p.productImages">
+  <h4>una imagen</h4>
+  <img [src]="fileHandler.url">
+</div>
+
+</div>
